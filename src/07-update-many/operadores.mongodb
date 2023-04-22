@@ -1,0 +1,40 @@
+//uso de operador set
+use("sample_training")
+db.zips.updateMany(
+    //esta es la consulta
+    { city: "CLEVELAND" },
+    //aqui la operacion con operadores
+    //operador set, agrega campo y valor  a cada documento que cumpla la condicion
+    {
+        $set: {
+            myAttr: "Hola"
+        }
+    }
+)
+//uso de operador rename
+use("sample_training")
+db.zips.updateMany(
+    //esta es la consulta
+    { city: "CLEVELAND" },
+    //aqui la operacion con operadores
+    //operador rename, cambia el nombre del campo a cada documento que cumpla la condicion
+    {
+        $rename: {
+            myAttr: "my_data"
+        }
+    }
+)
+
+//uso de operador unset
+use("sample_training")
+db.zips.updateMany(
+    //esta es la consulta
+    { city: "CLEVELAND" },
+    //aqui la operacion con operadores
+    //operador unset, elimina el campo a cada documento que cumpla la condicion
+    {
+        $unset: {
+            my_data: ""
+        }
+    }
+)

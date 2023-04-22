@@ -1,0 +1,12 @@
+use("sample_training")
+db.zips.updateMany(
+    //esta es la consulta
+    { city: "CLEVELAND" },
+    //aqui la operacion con operadores
+    //operador de incremento, aumenta 1000 a cada documento que cumpla la condicion
+    {
+        $inc: {
+            pop: 1000
+        }
+    }
+)

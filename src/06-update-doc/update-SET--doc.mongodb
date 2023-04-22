@@ -1,0 +1,13 @@
+use("platzi_store")
+//query
+db.products.updateOne({ _id: 2 },
+
+    //change operators, SE USA OPERADOR SET
+    { 
+        $set: {
+            name: "cambiado con update",
+            price: 5555,
+            descripcion: "modelo de negocio",
+            tags: ["A", "B", "C"]
+    } 
+ })

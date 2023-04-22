@@ -1,0 +1,10 @@
+use("platzi_store")
+//query
+db.products.updateOne({ _id: 2 },
+
+    //change operators, SE USA OPERADOR inc para incrementar
+    { 
+        $inc: {
+            price: 1            
+    } 
+ })
